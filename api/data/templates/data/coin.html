@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Coin</title>
+</head>
+<body>
+
+<form method="post" action="{% url 'coin-today' %}">
+    {% csrf_token %}
+    <button type="submit" name="coin" value="Bitcoin">Bitcoin</button>
+    <button type="submit" name="coin" value="Ethereum">Ethereum</button>
+    <button type="submit" name="coin" value="Tether">Tether</button>
+</form>
+
+</body>
+</html>
