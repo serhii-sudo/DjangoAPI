@@ -20,10 +20,7 @@ def exchange_rate(currency):  # currency -> rub, usd, eur
     request_currency = f'https://api.minfin.com.ua/summary/{api_key_currency}'
     result = requests.get(request_currency)
 
-    data = {'usd': {'bid': '41.3250', 'ask': '41.9000', 'trendAsk': 0.049999999999997, 'trendBid': 0.025000000000006},
-            'eur': {'bid': '45.1000', 'ask': '45.7000', 'trendAsk': 0, 'trendBid': 0},
-            'rub': {'bid': '0.3000', 'ask': '0.4500', 'trendAsk': 0, 'trendBid': 0},
-            }
+    data = result.json()
     bid = round(float(data.get(currency).get('bid')), 2)
     ask = round(float(data.get(currency).get('ask')), 2)
     return f'покупка: {bid}, продажа: {ask}'

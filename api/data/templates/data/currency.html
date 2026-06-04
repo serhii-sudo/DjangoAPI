@@ -8,7 +8,7 @@
 <h2>Курс валют НБУ</h2>
 <form method="post" action="{% url 'currency-today' %}">
     {% csrf_token %}
-    <input name='currency' placeholder="eur or usd or rub">
+    <input name='currency' placeholder="eur  usd  gbp">
     <br>
     <br>
     <a href="{% url 'currency' %}"><button>получить</button></a>
